@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/ghibliapireact/static/css/main.e8cf0336.chunk.css",
-    "main.js": "/ghibliapireact/static/js/main.541cd19d.chunk.js",
-    "main.js.map": "/ghibliapireact/static/js/main.541cd19d.chunk.js.map",
+    "main.css": "/ghibliapireact/static/css/main.9884f368.chunk.css",
+    "main.js": "/ghibliapireact/static/js/main.95845ebb.chunk.js",
+    "main.js.map": "/ghibliapireact/static/js/main.95845ebb.chunk.js.map",
     "runtime-main.js": "/ghibliapireact/static/js/runtime-main.f8bce0ea.js",
     "runtime-main.js.map": "/ghibliapireact/static/js/runtime-main.f8bce0ea.js.map",
-    "static/js/2.f99edcb7.chunk.js": "/ghibliapireact/static/js/2.f99edcb7.chunk.js",
-    "static/js/2.f99edcb7.chunk.js.map": "/ghibliapireact/static/js/2.f99edcb7.chunk.js.map",
+    "static/js/2.172b1952.chunk.js": "/ghibliapireact/static/js/2.172b1952.chunk.js",
+    "static/js/2.172b1952.chunk.js.map": "/ghibliapireact/static/js/2.172b1952.chunk.js.map",
     "index.html": "/ghibliapireact/index.html",
-    "static/css/main.e8cf0336.chunk.css.map": "/ghibliapireact/static/css/main.e8cf0336.chunk.css.map",
-    "static/js/2.f99edcb7.chunk.js.LICENSE.txt": "/ghibliapireact/static/js/2.f99edcb7.chunk.js.LICENSE.txt"
+    "static/css/main.9884f368.chunk.css.map": "/ghibliapireact/static/css/main.9884f368.chunk.css.map",
+    "static/js/2.172b1952.chunk.js.LICENSE.txt": "/ghibliapireact/static/js/2.172b1952.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f8bce0ea.js",
-    "static/js/2.f99edcb7.chunk.js",
-    "static/css/main.e8cf0336.chunk.css",
-    "static/js/main.541cd19d.chunk.js"
+    "static/js/2.172b1952.chunk.js",
+    "static/css/main.9884f368.chunk.css",
+    "static/js/main.95845ebb.chunk.js"
   ]
 }
