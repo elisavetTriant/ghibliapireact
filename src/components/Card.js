@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from './Image'
 
-const Card = ({ id, release_date, title, description, producer, director, video_id }) => {
+const Card = ({ id, release_date, title, description, producer, director, video_id, onShowVideo }) => {
   return (
     <div className='card'>
-     <Image video_id={video_id} title={title} />
+     <Image video_id={video_id} title={title} onShowVideo={onShowVideo} />
       <div>
         <h2>{title}</h2>
         <p>{description}</p>
