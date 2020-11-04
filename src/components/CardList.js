@@ -9,7 +9,7 @@ function filterItems(arr, query) {
   })
 }
 
-const CardList = ({ films }) => {
+const CardList = ({ films, onShowVideo }) => {
 
   return (
     <div className="container">
@@ -33,6 +33,7 @@ const CardList = ({ films }) => {
               director={film.director}
               producer={film.producer}
               video_id={current_video}
+              onShowVideo = {onShowVideo}
               />
           );
         })

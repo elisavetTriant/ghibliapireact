@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
-import './App.css';
-
+import Modal from '../components/Modal';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       films: [],
-      searchfield: ''
+      searchfield: '',
+      isOpen: false,
+      showVideoId: ''
     }
+
+    this.openModal = this.openModal.bind(this)
   }
 
   componentDidMount() {
@@ -21,6 +24,20 @@ class App extends Component {
 
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })
+  }
+
+  onShowVideo = (event) => {
+    event.preventDefault();
+    this.setState({ showVideoId: event.target.id})
+    this.openModal ();
+  }
+
+  closeModal = () => {
+    this.setState({isOpen: false})
+  }
+
+  openModal () {
+    this.setState({isOpen: true})
   }
 
   render() {
@@ -37,7 +54,8 @@ class App extends Component {
           <img src="./logo.png" className="app-logo" alt="Studio Ghibli Logo" />
           <h1>Studio Ghibli Api - React App</h1>
           <SearchBox searchChange={this.onSearchChange}/>
-          <CardList films={filteredFilms} />
+          <CardList films={filteredFilms} onShowVideo={this.onShowVideo} />
+          <Modal video_id={this.state.showVideoId} is_open={this.state.isOpen} onClose={this.closeModal}/>
         </div>
       );
   }
