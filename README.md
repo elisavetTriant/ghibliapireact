@@ -1,6 +1,6 @@
 # Ghibli Films React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) as a playing ground to create something fun with React while pulling data from different sources like the [Unofficial Ghibli API](https://github.com/janaipakos/ghibliapi), Youtube and static json files. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) as a playground to create something fun with React while pulling data from different sources like the [Unofficial Ghibli API](https://github.com/janaipakos/ghibliapi), Youtube and static json files. 
 
 It's heavily inspired from the [Robofriends App](https://github.com/aneagoie/robofriends) which is part of the Udemy Course "Zero To Mastery" by [@aneagoie](https://github.com/aneagoie/). Thanks Andrei! 
 
