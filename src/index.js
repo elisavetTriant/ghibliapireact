@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import { searchMovies, requestMovies, assignModal} from './StateContainer/reducers'
 import './index.css';
 import App from './containers/App';
-import Footer from './containers/Footer';
 //import reportWebVitals from './reportWebVitals';
 
+const logger = createLogger();
+const rootReducers = combineReducers({requestMovies, searchMovies, assignModal});
+const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, logger));
+
 ReactDOM.render(
-	<React.Fragment>
-	  <App />
-	  <Footer />
-	</React.Fragment>,
+	<Provider store={store}>
+		<App />
+	</Provider>,
   document.getElementById('root')
 );
 
