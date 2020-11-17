@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ghibliapireact/static/css/main.130c1cd1.chunk.css",
-    "main.js": "/ghibliapireact/static/js/main.8879d3f2.chunk.js",
-    "main.js.map": "/ghibliapireact/static/js/main.8879d3f2.chunk.js.map",
+    "main.js": "/ghibliapireact/static/js/main.fa4f2824.chunk.js",
+    "main.js.map": "/ghibliapireact/static/js/main.fa4f2824.chunk.js.map",
     "runtime-main.js": "/ghibliapireact/static/js/runtime-main.f8bce0ea.js",
     "runtime-main.js.map": "/ghibliapireact/static/js/runtime-main.f8bce0ea.js.map",
     "static/js/2.ca4d74b9.chunk.js": "/ghibliapireact/static/js/2.ca4d74b9.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.f8bce0ea.js",
     "static/js/2.ca4d74b9.chunk.js",
     "static/css/main.130c1cd1.chunk.css",
-    "static/js/main.8879d3f2.chunk.js"
+    "static/js/main.fa4f2824.chunk.js"
   ]
 }
