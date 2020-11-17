@@ -18,7 +18,7 @@ const loadImage = (id) => new Promise((resolve, reject) => {
   const img = new Image();
   img.addEventListener('load', () => resolve(img));
   img.addEventListener('error', (err) => reject(err));
-  img.src =  "http://img.youtube.com/vi/" + id + "/mqdefault.jpg";
+  img.src =  "https://img.youtube.com/vi/" + id + "/mqdefault.jpg";
 });
 
 function checkThumbnail(width) {
