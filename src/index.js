@@ -12,6 +12,8 @@ import App from './containers/App';
 const logger = createLogger();
 const rootReducers = combineReducers({requestMovies, searchMovies, assignModal});
 const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, logger));
+//const store = createStore(rootReducers, applyMiddleware(thunkMiddleware));
+
 
 ReactDOM.render(
 	<Provider store={store}>

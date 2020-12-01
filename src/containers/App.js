@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-    onRequestRobots: () => dispatch(requestMovies()),
+    onRequestMovies: () => dispatch(requestMovies()),
     closeModal : () => dispatch(closeModal()),
     openModal : () => dispatch(openModal()),
     setVideoID : (event) => dispatch(setVideoID(event.target.id))
@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => {
 class App extends Component {
 
   componentDidMount() {
-    this.props.onRequestRobots();
+    this.props.onRequestMovies();
   }
 
   onShowVideo = (event) => {

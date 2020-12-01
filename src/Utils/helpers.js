@@ -1,19 +1,5 @@
 /*Helper function in order to resolve if a url is an image*/
 
-    /*export function isValidVideo(id) {
-        let img = new Image();
-        img.src = "http://img.youtube.com/vi/" + id + "/mqdefault.jpg";
-        let result = img.onload = function () {    
-            if (Number(this.width) === 120) {
-            return false
-            }
-            return true
-        }
-        console.log(result())
-        return result()
-    }*/
-
-
 const loadImage = (id) => new Promise((resolve, reject) => {
   const img = new Image();
   img.addEventListener('load', () => resolve(img));
@@ -32,7 +18,6 @@ function checkThumbnail(width) {
 
 
  export async function isValidVideo(id) {
-
  return loadImage(id)
   .then(img => checkThumbnail(img.width))
   .then(result => result)
