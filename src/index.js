@@ -1,23 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import { searchMovies, requestMovies, assignModal} from './StateContainer/reducers'
+import { searchMovies, requestMovies, requestMovie, assignModal} from './StateContainer/reducers'
 import './index.css';
-import App from './containers/App';
+import Home from './containers/Home';
+import Movie from './containers/Movie';
 //import reportWebVitals from './reportWebVitals';
 
 const logger = createLogger();
-const rootReducers = combineReducers({requestMovies, searchMovies, assignModal});
+const rootReducers = combineReducers({requestMovies, requestMovie, searchMovies, assignModal});
 const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, logger));
 //const store = createStore(rootReducers, applyMiddleware(thunkMiddleware));
 
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<BrowserRouter>
+          <Switch>
+             <Route exact={true} path="/" component={Home} />
+             <Route  path="/movie/:id" component={Movie} />
+          </Switch>
+		</BrowserRouter>
 	</Provider>,
   document.getElementById('root')
 );
