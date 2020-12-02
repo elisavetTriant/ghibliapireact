@@ -37,6 +37,16 @@ h1 {
 	color: #fff
 }
 
+.card h2 {
+	font-size: 1.2rem;
+	padding: 1rem;
+
+}
+
+h3, h4, h5, h6 {
+	color: #5ebaf3;
+}
+
 img {
 	display: block;
 	margin: 1rem auto;
@@ -49,10 +59,10 @@ p {
 }
 
 dl {
-	padding: 0 2.5rem 2.5rem;
 	display: grid;
 	grid-template-columns: -webkit-max-content auto;
-	grid-template-columns: max-content auto
+	grid-template-columns: max-content auto;
+    margin-bottom: 20px;
 }
 
 dt {
@@ -64,9 +74,26 @@ dd {
 	grid-column-start: 2
 }
 
-.container {
+.pd-20 {
+	padding: 20px;
+}
+
+.pd-40 {
+	padding: 40px;
+}
+
+.mtb-20 {
+	margin: 20px 0;
+}
+
+.container, .containerCenter {
 	display: flex;
 	flex-wrap: wrap
+}
+
+.containerCenter {
+	align-content: center;
+	justify-content: center;
 }
 
 .card {
@@ -75,7 +102,8 @@ dd {
 	box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
 	border-radius: 12px;
 	overflow: hidden;
-	transition: all .2s linear
+	transition: all .2s linear;
+	position: relative;
 }
 
 .card:hover {
@@ -298,4 +326,26 @@ footer p {
 footer a, a:hover, a:visited {
 	color: #01577e;
 	text-decoration: underline;
+}
+
+.card a.myButton, a.button_link {
+	background-color:#01577e;
+	border-radius:3px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+}
+.card a.myButton:hover, a.button_link:hover {
+	background-color:#5ebaf3;
+}
+
+a.button_link {
+	position: static;
 }
