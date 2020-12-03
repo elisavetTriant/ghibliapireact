@@ -1,10 +1,14 @@
 # Ghibli Films React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) as a playground to create something fun with React while pulling data from different sources like the [Unofficial Ghibli API](https://github.com/janaipakos/ghibliapi), Youtube and static json files. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) as a playground to create something fun with React while pulling data from different sources like the [Unofficial Ghibli API](https://github.com/janaipakos/ghibliapi), Youtube and static json files.
+
+Take a look at the [project running here](https://elisavettriant.github.io/ghibliapireact/).
 
 It's heavily inspired from the [Robofriends App](https://github.com/aneagoie/robofriends) which is part of the Udemy Course "Zero To Mastery" by [@aneagoie](https://github.com/aneagoie/). Thanks Andrei! 
 
 It also takes some hints from the [tutorial and code](https://github.com/taniarascia/sandbox/tree/master/ghibli) of Tania Rascia's implementation in vanilla Javascript.
+
+If you spot any bugs, would like to show me how to make better, or just say hi, contact me at [elissavet.me](https://elissavet.me). Thank you!
 
 ## Getting Started with Create React App
 
@@ -12,7 +16,11 @@ Learn more about [Create React App](https://github.com/facebook/create-react-app
 
 ### Available Scripts
 
-In the project directory, you can run:
+Before you can run the app with `npm start` you should install all depedencies (this means also that you have installed node.js and npm on your machine). To begin, navigate on the project directory and run:
+
+#### `npm install`
+
+Then, while in the project directory, you can run:
 
 #### `npm start`
 
