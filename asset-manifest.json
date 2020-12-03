@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/ghibliapireact/static/css/main.130c1cd1.chunk.css",
-    "main.js": "/ghibliapireact/static/js/main.fa4f2824.chunk.js",
-    "main.js.map": "/ghibliapireact/static/js/main.fa4f2824.chunk.js.map",
+    "main.css": "/ghibliapireact/static/css/main.9b2e91db.chunk.css",
+    "main.js": "/ghibliapireact/static/js/main.ec58f759.chunk.js",
+    "main.js.map": "/ghibliapireact/static/js/main.ec58f759.chunk.js.map",
     "runtime-main.js": "/ghibliapireact/static/js/runtime-main.f8bce0ea.js",
     "runtime-main.js.map": "/ghibliapireact/static/js/runtime-main.f8bce0ea.js.map",
-    "static/js/2.ca4d74b9.chunk.js": "/ghibliapireact/static/js/2.ca4d74b9.chunk.js",
-    "static/js/2.ca4d74b9.chunk.js.map": "/ghibliapireact/static/js/2.ca4d74b9.chunk.js.map",
+    "static/js/2.39389dd2.chunk.js": "/ghibliapireact/static/js/2.39389dd2.chunk.js",
+    "static/js/2.39389dd2.chunk.js.map": "/ghibliapireact/static/js/2.39389dd2.chunk.js.map",
     "index.html": "/ghibliapireact/index.html",
-    "static/css/main.130c1cd1.chunk.css.map": "/ghibliapireact/static/css/main.130c1cd1.chunk.css.map",
-    "static/js/2.ca4d74b9.chunk.js.LICENSE.txt": "/ghibliapireact/static/js/2.ca4d74b9.chunk.js.LICENSE.txt",
+    "static/css/main.9b2e91db.chunk.css.map": "/ghibliapireact/static/css/main.9b2e91db.chunk.css.map",
+    "static/js/2.39389dd2.chunk.js.LICENSE.txt": "/ghibliapireact/static/js/2.39389dd2.chunk.js.LICENSE.txt",
     "static/media/logo.a4d05b32.png": "/ghibliapireact/static/media/logo.a4d05b32.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f8bce0ea.js",
-    "static/js/2.ca4d74b9.chunk.js",
-    "static/css/main.130c1cd1.chunk.css",
-    "static/js/main.fa4f2824.chunk.js"
+    "static/js/2.39389dd2.chunk.js",
+    "static/css/main.9b2e91db.chunk.css",
+    "static/js/main.ec58f759.chunk.js"
   ]
 }
