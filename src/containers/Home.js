@@ -56,7 +56,7 @@ class Home extends Component {
       (
         <div>
           <img src={logo} className="app-logo" alt="Studio Ghibli Logo" />
-          <h1>Studio Ghibli Api - React App</h1>
+          <h1>Studio Ghibli Films</h1>
           <SearchBox searchChange={onSearchChange} />
           <CardList films={filteredMovies} onShowVideo={this.onShowVideo} />
           <Footer />

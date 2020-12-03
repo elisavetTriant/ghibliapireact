@@ -21,8 +21,8 @@ ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
           <Switch>
-             <Route exact={true} path="/" component={Home} />
-             <Route  path="/movie/:id" component={Movie} />
+             <Route exact={true} path="/ghibliapireact" component={Home} />
+             <Route path="/ghibliapireact/movie/:id" component={Movie} />
           </Switch>
 		</BrowserRouter>
 	</Provider>,
