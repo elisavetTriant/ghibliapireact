@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
@@ -19,12 +19,12 @@ const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, logger)
 
 ReactDOM.render(
 	<Provider store={store}>
-		<BrowserRouter>
-          <Switch>
-             <Route exact={true} path="/ghibliapireact" component={Home} />
-             <Route path="/ghibliapireact/movie/:id" component={Movie} />
-          </Switch>
-		</BrowserRouter>
+		<HashRouter>
+		<Switch>
+             <Route exact path="/" component={Home} />
+             <Route path="/movie/:id" component={Movie} />
+        </Switch>
+		</HashRouter>
 	</Provider>,
   document.getElementById('root')
 );

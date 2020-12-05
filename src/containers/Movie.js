@@ -73,7 +73,7 @@ class Movie extends Component {
       <h1>Loading</h1> :
       (
         <div>
-          <Link to={`/ghibliapireact`}><img src={logo} className="app-logo" alt="Studio Ghibli Logo" /></Link>
+          <Link to={`/`}><img src={logo} className="app-logo" alt="Studio Ghibli Logo" /></Link>
           <h1>{title}</h1>
           <Video video_id={filteredMovie[0].videoID}/>
           <div className="container mtb-20">
@@ -115,7 +115,7 @@ class Movie extends Component {
             </div>
             ): null }
           <div className="containerCenter mtb-20">
-           <Link className="button_link" to={`/ghibliapireact`}>Back</Link>
+           <Link className="button_link" to={`/`}>Back</Link>
           </div>
           <Footer />
         </div>

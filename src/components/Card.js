@@ -14,7 +14,7 @@ const Card = ({ id, release_date, title, description, producer, director, video_
 	        <dt>Producer</dt><dd>{producer}</dd>
 	        <dt>Director</dt><dd>{director}</dd>
         </dl>
-        <Link className="myButton" to={`/ghibliapireact/movie/${id}`}>See more</Link>
+        <Link className="myButton" to={`movie/${id}`}>See more</Link>
       </div>
     </div>
   );
