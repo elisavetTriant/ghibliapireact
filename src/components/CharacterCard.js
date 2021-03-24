@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
 const CharacterCard = ({ name, gender, eye_color, hair_color }) => {
   return (

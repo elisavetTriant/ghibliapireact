@@ -98,6 +98,11 @@ const videos = [
     id: 20,
     name: "When Marnie Was There",
     videoID: 'jjmrxqcQdYg',
+  },
+  {
+    id:21,
+    name: "The Red Turtle",
+    videoID: '9Wf57f5F09c',
   }
 ];
 

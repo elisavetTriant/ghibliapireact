@@ -65,7 +65,7 @@ class Movie extends Component {
     let { movie, isPending } = this.props;
     let { release_date, title, description, producer, director, rt_score, url} = movie;
     
-    let filteredMovie = videos.filter(video =>{
+    let filteredMovie = videos.filter( video => {
       return title === video.name ;
     });
 
@@ -75,7 +75,10 @@ class Movie extends Component {
         <div>
           <Link to={`/`}><img src={logo} className="app-logo" alt="Studio Ghibli Logo" /></Link>
           <h1>{title}</h1>
-          <Video video_id={filteredMovie[0].videoID}/>
+          {(filteredMovie.length > 0)?
+            (<Video video_id={filteredMovie[0].videoID}/>)
+          :
+          ''}
           <div className="container mtb-20">
              <div className="card pd-20">
                 <h2>Description</h2>

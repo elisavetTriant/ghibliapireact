@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Studio Ghibli API React App",
+  "name": "A simple one-page Web App created with create-react-app and Studio Ghibli API",
   "icons": [
     {
       "src": "favicon.ico",
