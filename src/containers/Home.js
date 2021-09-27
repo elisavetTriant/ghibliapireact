@@ -54,7 +54,7 @@ class Home extends Component {
       return movie.title.toLowerCase().includes(searchField.toLowerCase());
     });
 
-    return isPending && isPendingVideos ?
+    return isPending && isPendingVideos && !movies.legth && !movieVideos.legth ?
       <h1>Loading</h1> :
       (
         <div>
