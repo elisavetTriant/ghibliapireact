@@ -6,6 +6,9 @@ import {
   REQUEST_MOVIE_PENDING,
   REQUEST_MOVIE_SUCCESS,
   REQUEST_MOVIE_FAILED,
+  REQUEST_MOVIE_VIDEOS_PENDING,
+  REQUEST_MOVIE_VIDEOS_SUCCESS,
+  REQUEST_MOVIE_VIDEOS_FAILED,
   MODAL_OPEN,
   MODAL_CLOSE,
   MODAL_SET_VIDEO
@@ -43,6 +46,14 @@ export const openModal = () => ({ type: MODAL_OPEN })
 
 export const setVideoID = (videoID) => ({ type: MODAL_SET_VIDEO, payload: videoID })
 
+
+export const requestMovieVideos = () => (dispatch) => {
+  dispatch({ type: REQUEST_MOVIE_VIDEOS_PENDING })
+   fetch('https://ghibli-sample-api.herokuapp.com/api/movies')
+    .then(response=> response.json())
+    .then(data => dispatch({ type: REQUEST_MOVIE_VIDEOS_SUCCESS, payload: data }))
+    .catch(error => dispatch({ type: REQUEST_MOVIE_VIDEOS_FAILED, payload: error }))
+}
 
 export const requestMovies = () => (dispatch) => {
   dispatch({ type: REQUEST_MOVIES_PENDING })

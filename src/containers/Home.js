@@ -4,7 +4,7 @@ import SearchBox from '../components/SearchBox';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import { connect } from 'react-redux';
-import { setSearchField, requestMovies, closeModal, openModal, setVideoID } from '../StateContainer/actions';
+import { setSearchField, requestMovies, requestMovieVideos, closeModal, openModal, setVideoID } from '../StateContainer/actions';
 import logo from '../logo.png';
 
 
@@ -14,6 +14,8 @@ const mapStateToProps = (state) => {
     searchField: state.searchMovies.searchField,
     movies: state.requestMovies.movies,
     isPending: state.requestMovies.isPending,
+    movieVideos: state.requestMovieVideos.movieVideos,
+    isPendingVideos: state.requestMovieVideos.isPendingVideos,
     videoID:  state.assignModal.videoID,
     isOpen: state.assignModal.isOpen
   }
@@ -25,6 +27,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
     onRequestMovies: () => dispatch(requestMovies()),
+    onRequestMovieVideos: () => dispatch(requestMovieVideos()),
     closeModal : () => dispatch(closeModal()),
     openModal : () => dispatch(openModal()),
     setVideoID : (event) => dispatch(setVideoID(event.target.id))
@@ -35,6 +38,7 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.onRequestMovies();
+    this.props.onRequestMovieVideos();
   }
 
   onShowVideo = (event) => {
@@ -45,20 +49,19 @@ class Home extends Component {
 
   render() {
     
-    //const { films, searchfield } = this.state;
-    const { movies, isPending, searchField, onSearchChange, videoID } = this.props;
+    const { movies, isPending, movieVideos, isPendingVideos, searchField, onSearchChange, videoID } = this.props;
     const filteredMovies = movies.filter(movie =>{
       return movie.title.toLowerCase().includes(searchField.toLowerCase());
     });
 
-    return isPending ?
+    return isPending && isPendingVideos ?
       <h1>Loading</h1> :
       (
         <div>
           <img src={logo} className="app-logo" alt="Studio Ghibli Logo" />
           <h1>Studio Ghibli Films</h1>
           <SearchBox searchChange={onSearchChange} />
-          <CardList films={filteredMovies} onShowVideo={this.onShowVideo} />
+          <CardList films={filteredMovies} videos={movieVideos} onShowVideo={this.onShowVideo} />
           <Footer />
           <Modal video_id={videoID} is_open={this.props.isOpen} onClose={this.props.closeModal}/>
         </div>

@@ -6,6 +6,9 @@ import {
   REQUEST_MOVIE_PENDING,
   REQUEST_MOVIE_SUCCESS,
   REQUEST_MOVIE_FAILED,
+  REQUEST_MOVIE_VIDEOS_PENDING,
+  REQUEST_MOVIE_VIDEOS_SUCCESS,
+  REQUEST_MOVIE_VIDEOS_FAILED,
   MODAL_OPEN,
   MODAL_CLOSE,
   MODAL_SET_VIDEO
@@ -42,6 +45,25 @@ export const requestMovies = (state=initialStateMovies, action={}) => {
     case REQUEST_MOVIES_SUCCESS:
       return Object.assign({}, state, {movies: action.payload, isPending: false})
     case REQUEST_MOVIES_FAILED:
+      return Object.assign({}, state, {error: action.payload})
+    default:
+      return state
+  }
+}
+
+//reducer for when the movies are loaded
+const initialStateMovieVideos = {
+  movieVideos: [],
+  isPendingVideos: true
+}
+
+export const requestMovieVideos = (state=initialStateMovieVideos, action={}) => {
+  switch (action.type) {
+    case REQUEST_MOVIE_VIDEOS_PENDING:
+      return Object.assign({}, state, {isPendingVideos: true})
+    case REQUEST_MOVIE_VIDEOS_SUCCESS:
+      return Object.assign({}, state, {movieVideos: action.payload, isPendingVideos: false})
+    case REQUEST_MOVIE_VIDEOS_FAILED:
       return Object.assign({}, state, {error: action.payload})
     default:
       return state
