@@ -55,18 +55,13 @@ p {
 }
 
 dl {
-	display: grid;
-	grid-template-columns: max-content auto;
+
     margin-bottom: 20px;
 }
 
 dt {
-	grid-column-start: 1;
-	font-weight: 700
-}
 
-dd {
-	grid-column-start: 2
+	font-weight: 700
 }
 
 .pd-20 {
@@ -112,6 +107,8 @@ dd {
 		flex-shrink: 1;
 		flex-basis: calc(50% - 2rem)
 	}
+
+	
 }
 
 @media screen and (min-width:900px) {
@@ -120,6 +117,22 @@ dd {
 		flex-shrink: 1;
 		flex-basis: calc(33% - 2rem)
 	}
+
+	dl {
+		display: grid;
+		grid-template-columns: max-content auto;
+		margin-bottom: 20px;
+	}
+	
+	dt {
+		grid-column-start: 1;
+		font-weight: 700
+	}
+	
+	dd {
+		grid-column-start: 2
+	}
+
 }
 
 .search {
