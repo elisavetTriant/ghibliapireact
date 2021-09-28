@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import Footer from '../components/Footer';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { requestMovie } from '../StateContainer/actions';
 import Video from '../components/Video';
 import CharacterCard from '../components/CharacterCard';
 import logo from '../logo.png';
-import videos from '../filmVideos.js';
+//import videos from '../filmVideos.js';
 
 
 const getFilmCharacters = (people, current_video_url) => {
 
   let filmCharacters = []
 
-  people.forEach(function (character){ 
-      character.films.forEach(function (film){ 
+  people.forEach(function (character) {
+    character.films.forEach(function (film) {
       if (film === current_video_url) {
         filmCharacters.push(character);
       }
@@ -51,23 +51,20 @@ class Movie extends Component {
   }
 
   componentDidUpdate(prevProps) {
-      if (prevProps.isPending !== this.props.isPending){
-        if (!this.props.isPending) {
-          if (this.props.movie.relatedData.people.length >  0) {
-            console.log("We have people")
-          }
-       }
+    if (prevProps.isPending !== this.props.isPending) {
+      if (!this.props.isPending) {
+        if (this.props.movie.relatedData.people.length > 0) {
+          console.log("We have people")
+        }
       }
     }
+  }
 
   render() {
-    
+
     let { movie, isPending } = this.props;
-    let { release_date, title, description, producer, director, rt_score, url} = movie;
-    
-    let filteredMovie = videos.filter( video => {
-      return title === video.name ;
-    });
+    let { release_date, title, original_title, original_title_romanised, running_time, description, producer, director, rt_score, url, video } = movie;
+
 
     return isPending ?
       <h1>Loading</h1> :
@@ -75,55 +72,58 @@ class Movie extends Component {
         <div>
           <Link to={`/`}><img src={logo} className="app-logo" alt="Studio Ghibli Logo" /></Link>
           <h1>{title}</h1>
-          {(filteredMovie.length > 0)?
-            (<Video video_id={filteredMovie[0].videoID}/>)
-          :
-          ''}
+          {video ?
+            (<Video video_id={video} />)
+            :
+            ''}
           <div className="container mtb-20">
-             <div className="card pd-20">
-                <h2>Description</h2>
-                {description}
-              </div>
-              <div className="card pd-20">
-                <h2>General Information</h2>
-                <dl>
-                   <dt>Release Date</dt><dd>{release_date}</dd>
-                   <dt>Producer</dt><dd>{producer}</dd>
-                   <dt>Director</dt><dd>{director}</dd>
-                   <dt>Rotten Tomato score</dt><dd>{rt_score}</dd>
-                 </dl>              
-              </div>
-          </div>
-          {(this.props.movie.relatedData.people.length > 0)?
-          (<div className="container mtb-20">
             <div className="card pd-20">
-            <h2>Listed Characters</h2>
+              <h2>Description</h2>
+              {description}
+            </div>
+            <div className="card pd-20">
+              <h2>General Information</h2>
+              <dl>
+                <dt>Original Title</dt><dd>{original_title}</dd>
+                <dt>Original Title Romanized</dt><dd>{original_title_romanised}</dd>
+                <dt>Release Date</dt><dd>{release_date}</dd>
+                <dt>Producer</dt><dd>{producer}</dd>
+                <dt>Director</dt><dd>{director}</dd>
+                <dt>Running time (minutes)</dt><dd>{running_time}</dd>
+                <dt>Rotten Tomato score</dt><dd>{rt_score}</dd>
+              </dl>
+            </div>
+          </div>
+          {(this.props.movie.relatedData.people.length > 0) ?
+            (<div className="container mtb-20">
+              <div className="card pd-20">
+                <h2>Listed Characters</h2>
 
-              {
-                    getFilmCharacters(this.props.movie.relatedData.people, url).map((character, i) => {
-                       return (
-                          <CharacterCard
-                            key={i}
-                            id={character.id}
-                            name={character.name}
-                            gender={character.gender}
-                            eye_color={character.eye_color}
-                            hair_color={character.hair_color}
-                            species={character.species}
-                            />
+                {
+                  getFilmCharacters(this.props.movie.relatedData.people, url).map((character, i) => {
+                    return (
+                      <CharacterCard
+                        key={i}
+                        id={character.id}
+                        name={character.name}
+                        gender={character.gender}
+                        eye_color={character.eye_color}
+                        hair_color={character.hair_color}
+                        species={character.species}
+                      />
                     )
-                     })
-              }
+                  })
+                }
               </div>
             </div>
-            ): null }
+            ) : null}
           <div className="containerCenter mtb-20">
-           <Link className="button_link" to={`/`}>Back</Link>
+            <Link className="button_link" to={`/`}>Back</Link>
           </div>
           <Footer />
         </div>
       );
-      
+
   }
 }
 

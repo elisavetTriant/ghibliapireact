@@ -11,7 +11,8 @@ import {
   MODAL_SET_VIDEO
 } from './constants';
 
-
+//Note: the data from the api are not consistent as it's a Unofficial API
+//Fetching all related data 
 const fetchRelatedVideoData = (location_url, species_url, vehicles_url, people_url) => {
   let allRequests = []
 
@@ -65,6 +66,18 @@ export const requestMovie = (videoID) => (dispatch) => {
   fetch('https://ghibliapi.herokuapp.com/films/' + videoID)
     .then(response => response.json())
     .then(responseData => {
+
+      const title = responseData.title;
+      let youtube_video = '';
+
+      fetch('https://ghibli-sample-api.herokuapp.com/api/movies/'+ title)
+      .then(response => response.json())
+      .then(videoData => {
+        youtube_video = videoData.movie_youtube_key
+      })
+      .catch(error => console.log(error))
+
+
       let relatedResponses = {};
       const location_url = responseData.locations[0];
       const people_url = responseData.people[0];
@@ -79,7 +92,7 @@ export const requestMovie = (videoID) => (dispatch) => {
           Object.assign(relatedResponses, { vehicles: arrayOfResponses[2] })
           Object.assign(relatedResponses, { people: arrayOfResponses[3] })
 
-          dispatch({ type: REQUEST_MOVIE_SUCCESS, payload: Object.assign({}, responseData, { relatedData: relatedResponses }) })
+          dispatch({ type: REQUEST_MOVIE_SUCCESS, payload: Object.assign({}, responseData, { video: youtube_video }, { relatedData: relatedResponses }) })
 
         })
         .catch(error => dispatch({ type: REQUEST_MOVIE_FAILED, payload: error }))
